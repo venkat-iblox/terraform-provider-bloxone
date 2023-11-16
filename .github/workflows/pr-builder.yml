@@ -16,12 +16,12 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Setup Go 1.18
-        uses: actions/setup-go@v2.1.3
+        uses: actions/setup-go@v4.1.0
         with:
           go-version: '1.18'
         id: go
       - name: Check out code into the Go module directory
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v4.1.1
       - name: Get dependencies
         run: |
           go mod download
@@ -36,13 +36,13 @@ jobs:
     needs: build
     steps:
       - name: Setup Go 1.18
-        uses: actions/setup-go@v2.1.3
+        uses: actions/setup-go@v4.1.0
         with:
           go-version: '1.18'
         id: go
 
       - name: Check out code into the Go module directory
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v4.1.1
 
       # Run go lint on the code
       - name: Run go lint
@@ -59,12 +59,12 @@ jobs:
     needs: build
     steps:
       - name: Setup Go 1.18
-        uses: actions/setup-go@v2.1.3
+        uses: actions/setup-go@v4.1.0
         with:
           go-version: '1.18'
         id: go
       - name: Check out code into the Go module directory
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v4.1.1
       - name: Get dependencies
         run: |
           go mod download
